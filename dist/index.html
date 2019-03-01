@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><title>news</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><link rel=stylesheet href=./static/main.css><meta name=referrer content=never><script>(function (doc, win) {
+        let docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            let clientWidth = docEl.clientWidth
+            if (!clientWidth) return
+            docEl.style.fontSize = 20 * (clientWidth / 320) + 'px'//  其中“20”根据你设置的html的font-size属性值做适当的变化
+          }
+
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window);</script><link href=./static/css/app.b0cf279ad3204cb3cde4b403cd102dc0.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.cbf0a3b103bd05328840.js></script><script type=text/javascript src=./static/js/vendor.8a91db6a33cb17e29248.js></script><script type=text/javascript src=./static/js/app.0322080f3cca25021556.js></script></body></html>
