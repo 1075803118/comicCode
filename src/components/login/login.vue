@@ -30,6 +30,9 @@ import {mapMutations} from 'vuex'
         pass: null
       }
     },
+    created(){
+      sessionStorage.setItem('isLogo',false);
+    },
     methods: {
       ...mapMutations([
         'saveUserName',
@@ -57,7 +60,8 @@ import {mapMutations} from 'vuex'
           this.$router.push({
             path: '/'
           })
-          this.saveUserName(this.form.username)
+          this.saveUserName(this.form.username);
+          sessionStorage.setItem('isLogo',true);
         }
       }
     }

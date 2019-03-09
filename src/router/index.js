@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
-export default new Router({
+let router =  new Router({
   routes: [
     {
       path: '/',
@@ -17,6 +17,9 @@ export default new Router({
     {
       path: '/classfily',
       name: '类别',
+      meta:{
+        rest:true
+      },
       component: require('@/components/classfily/classfily.vue').default
     },
     {
@@ -66,3 +69,15 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to,from,next)=>{
+  if(to.meta.rest){
+    if(sessionStorage.getItem('isLogo')=='false'){
+      next('/login');
+    }
+  }
+
+  next();
+});
+
+export default router;

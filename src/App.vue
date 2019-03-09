@@ -15,6 +15,43 @@
         'flag'
       ])
     },
+    data(){
+      return{
+        color:[333,444,555,666,777,88,99,10,11,12,13,14,15,16,17,18,19,20,21,22],
+        Strength:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+        arr:[]
+      }
+    },
+    created(){
+      console.log(this.isSignal(-41,1,-100))
+
+    },
+    methods:{
+      isSignal(num,i,z){
+
+        let c = '';
+        console.log(z)
+        if(num<z){
+          console.log(this.Strength[i])
+          console.log(z)
+          c = this.Strength[i];
+        }else{
+          i++;
+          let j = 4;
+          if(z>-41){
+            j=5;
+          }else if(z>-30){
+            j=10;
+          }
+
+          this.isSignal(num,i,(z+j));
+        }
+
+
+
+
+      }
+    },
     mounted(){
       this.$nextTick((res) => {
         let body = document.getElementsByTagName('body')[0]
@@ -26,7 +63,7 @@
           }
         })
       })
-    }
+    },
   }
 </script>
 
